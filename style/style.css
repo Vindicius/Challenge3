@@ -1,0 +1,94 @@
+html, body, menu, p, h1, h2, h3, section {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #333333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* navbar/logo */
+header {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+}
+.logo{
+    width: 320px;
+}
+/* einde navbar code*/
+
+/*begin containers*/
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+main h1{
+    text-align: center;
+    color: #fff;
+}
+.data{
+	width: 100%;
+}
+.innerData{
+    padding: 30px;
+    background-color: #4f4f4f;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+/*Einde containers*/
+
+
+
+
+
+@media only screen and (max-width: 959px) {
+    .logo{
+    	padding-left: 20px;
+    }
+    main{
+    	justify-content: center;
+    }
+    header{
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+    main{
+    	justify-content: center;
+    }
+    .data{
+        width: 90%;
+        margin-left: 5%;
+    }
+    header{
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: flex-start;
+    }
+    .mapboxgl-ctrl-geocoder {
+        max-width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    .data{
+        width: 40%;
+    }
+    header{
+        padding-bottom: 20px;
+    }
+}

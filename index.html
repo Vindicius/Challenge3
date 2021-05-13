@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IXD2 - SpaceX - ch3</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" src="js/javascript.js" defer></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"  type="text/css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+
+<body>
+
+	<header>
+		<img class="logo" src="img/SpaceX-Logo.svg">
+	</header>
+
+	<main>
+
+		<section class="data">
+			<div>
+				<div type="text" id="geocoder"> </div>
+			</div>
+		</section>
+
+		<section class="data">
+			<h1>Kaart</h1>
+			<div class="innerData">
+				<div id='map'></div>
+			</div>
+		</section>
+
+		<section class="data">
+			<h1>Weer condities</h1>
+			<div class="innerData">
+				<img alt="Weather Conditions" id="weatherConditions">
+			</div>
+
+		</section>
+
+	</main>
+
+	<footer>
+	</footer>
+</body>
+
+</html>
