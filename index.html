@@ -14,15 +14,13 @@
 </head>
 
 <body>
-
 	<header>
 		<img class="logo" src="img/SpaceX-Logo.svg">
 	</header>
 
 	<main>
-
-		<section class="data">
-			<div>
+		<section class="data" >
+			<div class="innerData">
 				<div type="text" id="geocoder"> </div>
 			</div>
 		</section>
@@ -30,6 +28,7 @@
 		<section class="data">
 			<h1>Kaart</h1>
 			<div class="innerData">
+				<p id="locationNameOutput"></p>
 				<div id='map'></div>
 			</div>
 		</section>
@@ -37,9 +36,10 @@
 		<section class="data">
 			<h1>Weer condities</h1>
 			<div class="innerData">
-				<img alt="Weather Conditions" id="weatherConditions">
+				<img alt="weather Conditions" id="weatherIcon">
+                <p id="showTemp"></p>
 			</div>
-
+			<p id="showLanding"></p>
 		</section>
 
 	</main>

@@ -25,3 +25,7 @@ var searchLocation = new MapboxGeocoder({
 
 //Weatherbit api voor herkennen weercondities(op advies van een medestudent deze gebruikt ipv de gebruikte api in de lessen)
 
+const key = '09a75e1975e749bd9d44b0eb6d7dbf5c'; //Key voor API weather
+var temp = document.getElementById('showWeatherTemp');
+var weatherIcon = document.getElementById('weatherIcon');
+weatherIcon.src = 'images/errorIcon.svg'; // default img

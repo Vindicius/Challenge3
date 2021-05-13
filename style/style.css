@@ -25,6 +25,7 @@ main{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-content: center;
 }
 main h1{
     text-align: center;
@@ -75,7 +76,6 @@ main h1{
     main{
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
         align-content: flex-start;
     }
     .mapboxgl-ctrl-geocoder {
@@ -83,7 +83,10 @@ main h1{
         margin-right: auto;
         margin-left: auto;
     }
-
+    .innerData:first-child {
+    	flex-grow: 2;
+        width: 100%;
+    }
 
     .data{
         width: 40%;
