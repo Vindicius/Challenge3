@@ -20,12 +20,13 @@ var searchLocation = new MapboxGeocoder({
 
 //Weatherbit api voor herkennen weercondities(op advies van een medestudent deze gebruikt ipv de gebruikte api in de lessen)
 
-var token = '09a75e1975e749bd9d44b0eb6d7dbf5c'; //Sleutel voor de weer api
+var token = '09a75e1975e749bd9d44b0eb6d7dbf5c'; //Token voor de weer api
 var temp = document.getElementById('showTemp');
 var weather = document.getElementById('weather');
+var showSafety = document.getElementById('showSafety');
 document.getElementById('search').appendChild(searchLocation.onAdd(map));//zoekbalk
 
-weather.src = 'img/error.png'// dit stond ook in de switch maar hier leek het niet te werken dus daarom
+weather.src = 'img/error.png'// dit stond ook in de switch maar hier leek het niet te werken dus daarom hierzo gezet
 
 function showWeatherCode(){
 	fetch('https://api.weatherbit.io/v2.0/current?lat=' + lat + '&lon=' + lon + '&key=' + token + '&include=minutely')// dit is de geven link van de site waarmee het weer van de gekozen locatie wordt opgehaald
@@ -37,38 +38,37 @@ function showWeatherCode(){
 		switch(true){
 			case code >= 200 && code <=233:
 				weather.src = 'img/thunder.png';
-				document.getElementById('showSafety').innerHTML = 'Hier landen is gevaarlijk!</ br> Advies: Zoek een andere landingsplek!';
+				showSafety.innerHTML = 'Hier landen is gevaarlijk!';
 			break;
 			case code >= 300 && code <=522:
 				weather.src = 'img/rain.png';
-				document.getElementById('showSafety').innerHTML = 'Hier landen is gevaarlijk!</ br> Advies: Zoek een andere landingsplek!';
+				showSafety.innerHTML = 'Hier landen is gevaarlijk!';
 			break;
 			case code >= 600 && code <=623:
 				weather.src = 'img/snow.png';
-				document.getElementById('showSafety').innerHTML = 'Hier landen is mogelijk maar erg glad!</ br> Advies: Zoek een andere landingsplek!';
+				showSafety.innerHTML = 'Hier landen is mogelijk maar erg glad!';
 			break;
 			case code >= 700 && code <=751:
 				weather.src = 'img/fog.png';
-				document.getElementById('showSafety').innerHTML = 'Hier landen is mogelijk maar er is verminderd zicht!</ br> Advies: Zoek een andere landingsplek!';
+				showSafety.innerHTML = 'Hier landen is mogelijk maar er is verminderd zicht!';
 			break;
 			case code == 800 || code == 801:
 				weather.src = 'img/sun.png';
-				document.getElementById('showSafety').innerHTML = 'Hier landen is Veilig!</ br> Advies: Landingsplek bevestigd!';
+				showSafety.innerHTML = 'Hier landen is Veilig!';
 			break;
 			case code >= 802 && code <=804:
 				weather.src = 'img/fog.png';
-				document.getElementById('showSafety').innerHTML = 'Hier landen is mogelijk maar er is verminderd zicht!</ br> Advies: Zoek een andere landingsplek!';
+				showSafety.innerHTML = 'Hier landen is mogelijk maar er is verminderd zicht!';
 			break;
 
-			default:
+			default:// deze default geeft de png niet weer, daarom dit buiten deze functie geschreven
 			weather.src = 'img/error.png';
-			document.getElementById('showSafety').innerHTML = 'Hier landen is mogelijk maar er is verminderd zicht!</ br> Advies: Zoek een andere landingsplek!';
-			document.getElementById('showTemp').innerHTML = '00.0 Celcius'
 			break;
 		}
-
-
 	})
+.catch(err => temp.innerHTML = ' - °C')
+.catch(err => showSafety.innerHTML = 'Kies een potentiële landingsplaats! Advies: Landingsplek bevestigd!')
+
 }
 showWeatherCode()
 setInterval(showWeatherCode, 1500);//de code outut werkt niet zonder interval, ik wilde deze meer tijd geven om de api niet te belasten maar dit bleek de output tegen te houden
