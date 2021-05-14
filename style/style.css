@@ -47,16 +47,7 @@ main h1{
 #map {
     width: 100%;
     height: 500px;
-  
 }
-
-
-
-
-
-
-
-
 
 
 @media only screen and (max-width: 959px) {
@@ -68,6 +59,9 @@ main h1{
     }
     header{
         padding-bottom: 20px;
+    }
+    .innerData{
+    	margin-bottom: 20px;
     }
 }
 
@@ -95,11 +89,12 @@ main h1{
         margin-right: auto;
         margin-left: auto;
     }
-    .innerData:first-child {
-    	flex-grow: 2;
-        width: 100%;
+    .data:first-child .innerData{
+        height: 256px;
     }
-
+    .mapboxgl-ctrl-geocoder{
+    	margin-top: 100px
+    }
     .data{
         width: 40%;
     }
